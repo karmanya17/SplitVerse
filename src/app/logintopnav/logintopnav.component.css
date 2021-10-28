@@ -1,0 +1,58 @@
+.d-flex{
+    padding-right: 1rem;
+}
+.logo{
+    width:8rem;
+    position:relative;
+    top:-25%;
+    cursor:pointer;
+}
+.loginbtn{
+    color:black;
+    background-color: #9FF6C2;
+    font-weight:bold ;
+}
+.signupbtn{
+    color:#FFFFFF;
+    font-weight:bold ;
+    background-color:#334756;
+}
+.background{
+    width:50rem;
+    z-index: -1;
+    position:fixed;
+    right:-4rem;
+    top: 1rem;
+}
+.bold{
+    font-weight: bold;
+}
+.grey{
+    color: #52616B;
+}
+  a {
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; }
+    a, a:hover {
+      text-decoration: none !important; }
+
+.black{
+    color:black
+}
+.pointer{
+    cursor: pointer;
+}
+.margin-right{
+    margin-right: 1rem;
+}
+.margin-top{
+    margin-top: 1rem;
+}
+.margin{
+    margin:0.7rem 0.2rem 0 0;
+}
+.inline{
+    display: inline-block;
+
+}

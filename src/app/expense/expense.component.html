@@ -1,0 +1,27 @@
+<app-logintopnav></app-logintopnav>
+<div class="container">
+    <form [formGroup]="moneyForm "(ngSubmit)="submitMoney()" >
+        <div class="card w-50 shadows border-0">
+            <div class="card-header">
+                <h3>Add Expense for {{name}} </h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <label class="font-weight-bold mb-1" for="">Money Paid till now</label>
+                        <input [ngClass]="{
+                            'has-error':moneyForm.controls.paid.touched && moneyForm.controls.paid.invalid,
+                            'has-success' : moneyForm.controls.paid.touched && moneyForm.controls.paid.valid
+                        }"
+                        type="number" formControlName="paid" class="form-control">
+                        <span style="color:red;"
+                        *ngIf="moneyForm.controls.paid.touched && moneyForm.controls.paid.invalid">Please Enter Amount</span> 
+                    </div>
+                </div>
+                <button [disabled]="!moneyForm.controls.paid.dirty" type="submit" class="btn btn-primary mt-2">Add</button>
+            </div>
+            
+        </div>
+        
+    </form>
+</div>

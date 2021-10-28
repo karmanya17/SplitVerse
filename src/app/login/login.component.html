@@ -1,0 +1,35 @@
+<app-topnav></app-topnav>
+<div class="container-fluid">
+    <div class="background-div">
+        <div class="clip-triangle"></div>
+        <div class="clip-circle"></div>
+        <div class="d-flex login-container">
+            <div class="card w-50">
+                <div class="card-body">
+                    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                        <h3>LOGIN</h3>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input  type="email" class="form-control" formControlName="email">
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" formControlName="password">
+                        </div>
+                        <button type="submit" class="btn btn-dark mt-3">Login</button>
+                    </form>
+    
+                </div>
+            </div>
+            <div class="displaylogo">
+                <img class="size zoom" src="./assets/img/displaylogo.png" alt="logo">
+            </div>
+
+        </div>
+        <div class="clip-smallcircle">
+        </div>
+        <div class="clip-righttriangle"></div>
+        <div class="clip-semicircle"></div>
+    </div>
+    
+</div>

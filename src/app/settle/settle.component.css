@@ -1,0 +1,41 @@
+.background-white{
+    background-color: white;
+}
+.shadows{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+.font-weight-bold{
+    font-weight: 700;
+}
+.padding-left{
+    padding-left: 16%;
+}
+.margin-auto{
+    margin:0 auto 0 auto; 
+}
+.background-green{
+    background-color: #9FF6C2;
+}
+.border-radius{
+    border-radius: 15px;
+}
+.background-green-gradient{
+    background: rgb(182,127,254);
+background: linear-gradient(90deg, rgba(182,127,254,1) 0%, rgba(17,214,242,1) 33%, rgba(122,250,150,1) 71%);
+
+}
+.background-red-gradient{
+    background: rgb(182,127,254);
+background: linear-gradient(90deg, rgba(182,127,254,1) 0%, rgba(242,96,17,1) 33%, rgba(250,122,161,1) 71%);
+}
+.pointer{
+cursor:pointer;
+}
+.backimg{
+    width:140%;
+    position: fixed;
+    z-index:-10;
+    left:2%;
+    
+}

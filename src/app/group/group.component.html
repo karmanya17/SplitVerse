@@ -1,0 +1,48 @@
+<app-logintopnav></app-logintopnav>
+<div class="container-fluid">
+    <div class="card w-75 border-0 shadows">
+        <div class="d-flex card-header justify-content-between border-bottom">
+        <h3 class="">{{groupname}}</h3>
+            <button [routerLink]="['/settle',groupid]" class="btn btn-green btn-lg shadows" >Settle</button>
+        </div>
+        <div class="card-body p-0">
+            <form [formGroup]="memberForm" (ngSubmit)="submitMember(memberForm)">
+                <div class="d-flex m-2">
+                
+                    <input [ngClass]="{
+                        'has-error':memberForm.controls.membername.touched && memberForm.controls.membername.invalid,
+                        'has-success' : memberForm.controls.membername.touched && memberForm.controls.membername.valid
+                    }"
+                    formControlName="membername" class="margin-right" type="text" placeholder="Add a Friend">
+                    <button type="submit" class="btn btn-dark font-weight-bold">Add +</button>
+                </div>
+                <span class="p-2" style="color:red;"
+                        *ngIf="memberForm.controls.membername.touched && memberForm.controls.membername.invalid">Enter Valid Name</span>
+            </form>
+            
+            <div class="d-flex mt-4">
+                <div class="table-responsive margin-auto w-75">
+                    <table class="table " id="dataTable">
+                        <tbody>
+                            <tr *ngFor="let member of members">
+                                <td class=" text-center font-weight-bold ">{{member.membername}}</td>
+                                <td class=" text-center font-weight-bold ">
+                                        Paid : &#8360;. {{member.paid}}
+                                </td>
+                                <td class=" text-center">
+                                    <div>
+                                        <button [routerLink]="['/member',groupid+'/'+member.id]" class="btn btn-primary btn-sm margin-right">Add Expense</button>
+                                        <button (click)="removeMember(groupid+member.id)" class="btn btn-danger btn-sm">Remove</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            </tbody>
+            
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>

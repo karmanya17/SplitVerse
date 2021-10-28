@@ -1,0 +1,23 @@
+<app-logintopnav></app-logintopnav>
+<div class="container-fluid">
+    <div class="backimg">
+        <img src="./assets/img/settleBackground.png" alt="">
+    </div>
+    <div class="margin-auto">
+                <div class="p-2 background-green-gradient w-50 margin-auto text-center mb-4 border-radius shadows"> 
+                    <h4 class="font-weight-bold">Each Person should have spended &#8360; {{target}}</h4>
+                </div>
+                <div class="shadows p-2 background-white w-50 margin-auto border-radius">
+                    <div *ngFor="let res of result" class="background-green border-radius p-2 mb-2 mt-2" >
+                        <h4 class="text-center">{{res}}</h4>
+                    </div>
+                </div>
+    </div>
+    
+    <div class="row">
+        <div routerLink="/dashboard" class="p-1 background-red-gradient w-25 margin-auto text-center mt-4 border-radius shadows pointer"> 
+            <h4 class="font-weight-bold mt-1"><i class="fa fa-long-arrow-alt-left"></i> Back to Dashboard </h4>
+        </div>
+    </div>
+    
+</div>

@@ -1,0 +1,16 @@
+<header class="site-navbar site-navbar-target" role="banner">
+
+    <div class="container-fluid">
+        <div class="d-flex justify-content-between ">
+
+            <div class="site-logo">
+                <img class="logo" src="./assets/img/Logo.png" alt="logo" routerLink="/dashboard">
+            </div>
+            <div class="margin">
+                <h5 class="inline margin-right"><span class="inline margin-right"><i class="fa fa-user-circle fa-lg"></i></span>{{userName}}</h5>
+                <button (click)="logout()" class="btn signupbtn inline">Logout</button>
+            </div>
+        </div>
+    </div>
+
+</header>

@@ -1,0 +1,27 @@
+
+.card{
+    margin:0 auto 0 auto;
+}
+.margin-right{
+    margin-right: 1rem;
+}
+.margin-auto{
+    margin: 0 auto 0 auto;
+}
+.text-color-white{
+    color:#EEEEEE;
+}
+.btn-green{
+    background-color: #9FF6C2;
+    font-weight: bold;
+}
+.btn-green:hover{
+    background-color: #66BD88;
+}
+.font-weight-bold{
+    font-weight: bold;
+}
+.shadows{
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
