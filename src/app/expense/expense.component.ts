@@ -36,7 +36,7 @@ export class ExpenseComponent implements OnInit {
       console.log(this.memberid)
       this.groupService.getGroupById(this.groupid).subscribe((data) => {
         this.group=data;  
-        console.log(this.group);
+//         console.log(this.group);
         data.member.forEach((member,i)=>{
          // console.log(member.id)
           //console.log(this.memberid)
