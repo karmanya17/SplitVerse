@@ -24,7 +24,7 @@ export class SettleComponent implements OnInit {
   settle(){
     this.activeRoute.params.subscribe((paramsData) => {
       this.groupService.getGroupById(paramsData.id).subscribe((data) => {
-        console.log(data);
+       // console.log(data);
         let total=0,n=data.member.length,temp=data.member;
         data.member.forEach((member)=>{
           total+=member.paid;
