@@ -79,7 +79,7 @@ export class SettleComponent implements OnInit {
       else
           val = a;
 
-          console.log(a, b);
+        //  console.log(a, b);
 
       temp[Min].paid += val;
       temp[Max].paid -= val;
