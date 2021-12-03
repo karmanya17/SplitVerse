@@ -77,7 +77,7 @@ app.post("/user/register",async function(req,res){
 app.post("/user/login",async function(req,res){
     try
     {
-        console.log(req.body);
+      //  console.log(req.body);
         let connection = await mongoclient.connect(URL)
         let db=connection.db("Splitverse")
         let user= await db.collection("users").findOne({email:req.body.email})
