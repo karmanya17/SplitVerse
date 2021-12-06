@@ -91,7 +91,7 @@ export class SettleComponent implements OnInit {
         }
       })
     })
-    console.log(this.result);
+    //console.log(this.result);
   }
 
 
