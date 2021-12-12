@@ -32,7 +32,7 @@ export class ExpenseComponent implements OnInit {
      // console.log(typeof paramsData.id )
      this.groupid=paramsData.id.slice(0,24)
      this.memberid=paramsData.id.slice(25,30)
-     // console.log(this.groupid)
+      console.log(this.groupid)
       console.log(this.memberid)
       this.groupService.getGroupById(this.groupid).subscribe((data) => {
         this.group=data;  
