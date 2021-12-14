@@ -36,7 +36,7 @@ export class GroupComponent implements OnInit {
     this.activeRoute.params.subscribe((paramsData) => {
       this.groupid=paramsData.id
       this.groupService.getGroupById(paramsData.id).subscribe((data) => {
-        console.log(data);
+       // console.log(data);
         this.members=data.member;
         this.groupname=data.groupname
         
