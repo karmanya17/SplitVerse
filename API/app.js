@@ -16,7 +16,7 @@ function authenticate(req,res,next){
     if(req.headers.authorization){
        let valid= jwt.verify(req.headers.authorization,"~Q$eTgh27'SrtXrq")
        if(valid){
-           console.log(valid);
+         //  console.log(valid);
            req.userid=valid.id;
         next()
        }
