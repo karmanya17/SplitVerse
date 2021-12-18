@@ -31,7 +31,7 @@ export class DashboardComponent implements OnInit {
       })
       this.groupService.getAllGroups().subscribe((data) => {
         this.groupdetails = data
-//         console.log(this.groupdetails)
+      console.log(this.groupdetails)
         this.count=this.groupdetails.length;
        })
     }
