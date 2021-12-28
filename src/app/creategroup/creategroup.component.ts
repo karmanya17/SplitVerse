@@ -29,7 +29,7 @@ export class CreategroupComponent implements OnInit {
     });
 
     if(this.groupFrom.valid){
-      console.log(this.groupFrom.value);
+      //console.log(this.groupFrom.value);
       this.activeRoute.params.subscribe((paramsData)=>{
       //  this.groupFrom.addControl('userId',this.formBuilder.control('',[Validators.required]))
         this.groupFrom.addControl('count',this.formBuilder.control('',[Validators.required]))
