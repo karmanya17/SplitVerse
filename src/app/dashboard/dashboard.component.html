@@ -4,35 +4,38 @@
         <i class="fa fa-spinner fa-spin" aria-hidden="true"></i>
       </div>
     <div class="row justify-content-between mb-3">
-        <div class="col-lg-10">
+        <div class="col-lg-8">
             <h2>DASHBOARD</h2>
-        </div>
-        <div class="col-lg-2 text-end ">
-            <div [routerLink]="['/create-group']" class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <button class="btn btn-green btn-lg">Create Group</button>
-                    </div>
-                    <div class="flip-card-back">
-                        <h1>+</h1>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <div class="row">
         <div class="col lg-12">
-            <div class="card h-100 py-2 shadows">
+            <div class="card h-100 shadows">
                 <div class="card-header">
                     <h4>Group Summary</h4>
                 </div>
                 <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                            <div class="text-xs font-weight-bold text-uppercase mb-0 grey">
-                               <p>Total Groups</p></div>
-                            <div class="h3 mb-3 font-weight-bold green">{{count}}</div>
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="text-xs font-weight-bold text-uppercase mb-0 black">
+                               <p>Total Groups</p>
+                            </div>
                         </div>
+                        <div class="col-md-2">
+                            <div [routerLink]="['/create-group']" class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <button class="btn btn-green btn-lg">Create Group</button>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h1>+</h1>
+                                    </div>
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 h3 mb-3 font-weight-bold green-dark">{{count}}</div>
                     </div>
                     <div *ngFor="let group of groupdetails" class="row background-green border-round p-1 mt-3 pointer w-75 margin-auto">
                         <div class="col-lg-4 font-weight-bold margin-left">
@@ -43,7 +46,7 @@
                         </div>
                         <div class="col-lg-4 text-end justify-content-between">
                             <button  [routerLink]="['/group',group._id]" class="btn btn-dark margin-right">Open</button>
-                            <button (click)="deleteGroup(group._id)" class="btn btn-danger">Remove</button>
+                            <button (click)="deleteGroup(group._id)" class="btn btn-danger"><i class="fa fa-lg fa-solid fa-trash"></i></button>
                         </div>
                     </div>
                 </div>

@@ -3,17 +3,26 @@
     padding:2%;
 }
 .card{
-    background-color:#334756 ;
+    background-color:#FFF ;
 
 }
 .card-header >h4{
-    color:white;
+    color:black;
+}
+.font-weight-bold{
+    font-weight: bold;
 }
 .grey{
     color:#EEEEEE;
 }
+.black{
+    color:black;
+}
 .green{
     color:#9FF6C2;
+}
+.green-dark{
+    color:#68e79b;
 }
 .background-green{
     background-color:#9FF6C2 ;

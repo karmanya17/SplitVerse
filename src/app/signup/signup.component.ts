@@ -25,7 +25,8 @@ export class SignupComponent implements OnInit {
     if(this.signupForm.value.password===this.signupForm.value.confirmpassword){
       //console.log(this.signupForm.value)
       this.signupForm.removeControl('confirmpassword');
-      this.userService.registerUser(this.signupForm.value).subscribe(()=>{
+      this.userService.registerUser(this.signupForm.value).subscribe((data)=>{
+        console.log(data);
         this.router.navigate(['/login'])
       },(err)=>{
         console.log(err)

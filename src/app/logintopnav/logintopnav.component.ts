@@ -14,7 +14,7 @@ export class LogintopnavComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.getuser().subscribe((data)=>{
-   //   console.log(data);
+      console.log(data);
       data.forEach((user)=>{
         let userid=window.localStorage.getItem('userId')
         console.log(userid);

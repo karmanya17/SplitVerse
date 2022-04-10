@@ -13,9 +13,9 @@
     font-weight:bold ;
 }
 .signupbtn{
-    color:#FFFFFF;
+    color:black;
     font-weight:bold ;
-    background-color:#334756;
+    background-color:#8cffba;
 }
 .background{
     width:50rem;
@@ -45,9 +45,6 @@
 }
 .margin-right{
     margin-right: 1rem;
-}
-.margin-top{
-    margin-top: 1rem;
 }
 .margin{
     margin:0.7rem 0.2rem 0 0;

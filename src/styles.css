@@ -1,5 +1,5 @@
 body{
-    background-color: #EEEEEE;
+    background-color: rgb(241, 241, 241) !important;
 }
 .my-overlay {
     left: 0 !important;

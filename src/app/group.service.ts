@@ -53,7 +53,7 @@ export class GroupService {
       })
     })
   }
- deleteGroupById(id:number){
+  deleteGroupById(id:number){
     return this.http.delete(`https://stark-retreat-89439.herokuapp.com/group/${id}`,{
       headers:new HttpHeaders({
         'Content-Type':'application/json',
@@ -63,6 +63,14 @@ export class GroupService {
   }
   deletememberById(id:number){
     return this.http.delete(`https://stark-retreat-89439.herokuapp.com/group/member/${id}`,{
+      headers:new HttpHeaders({
+        'Content-Type':'application/json',
+        Authorization:localStorage.getItem("access_token")||""
+      })
+    })
+  }
+  settleGroupPayment(id:number){
+    return this.http.post(`https://stark-retreat-89439.herokuapp.com/settlepayment/${id}`,{
       headers:new HttpHeaders({
         'Content-Type':'application/json',
         Authorization:localStorage.getItem("access_token")||""
