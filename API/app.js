@@ -11,12 +11,11 @@ app.use(express.json())
 app.use(cors({
     origin:"*"
 }))
-//MiddleWare for Authentication the Routes
 function authenticate(req,res,next){
     if(req.headers.authorization){
        let valid= jwt.verify(req.headers.authorization,"~Q$eTgh27'SrtXrq")
        if(valid){
-         //  console.log(valid);
+           console.log(valid);
            req.userid=valid.id;
         next()
        }
@@ -40,7 +39,6 @@ app.get("/",function(req,res){
         message:"Working"
     })
 })
-//Get all User
 app.get("/user",async function(req,res){
     try{
         let connection = await mongoclient.connect(URL)
@@ -55,7 +53,6 @@ app.get("/user",async function(req,res){
         console.log(error)
     }
 })
-//Register a User
 app.post("/user/register",async function(req,res){
     try{
         let connection = await mongoclient.connect(URL)
@@ -73,11 +70,10 @@ app.post("/user/register",async function(req,res){
         console.log(error)
     }
 })
-//Login a user
 app.post("/user/login",async function(req,res){
     try
     {
-      //  console.log(req.body);
+        console.log(req.body);
         let connection = await mongoclient.connect(URL)
         let db=connection.db("Splitverse")
         let user= await db.collection("users").findOne({email:req.body.email})
@@ -114,7 +110,6 @@ app.post("/user/login",async function(req,res){
 
     }
 })
-//Get all groups
 app.get("/groups",authenticate,async function(req,res){
     try{
         let connection = await mongoclient.connect(URL)
@@ -129,7 +124,6 @@ app.get("/groups",authenticate,async function(req,res){
         console.log(error)
     }
 })
-//Create a Group
 app.post("/create-group",authenticate,async function(req,res){
     try{
         console.log(req.body);
@@ -146,7 +140,6 @@ app.post("/create-group",authenticate,async function(req,res){
         console.log(error)
     }
 })
-//Get a particular group
 app.get("/group/:id",authenticate,async function(req,res){
     try{
         var id=mongodb.ObjectId(req.params.id)
@@ -165,7 +158,7 @@ app.get("/group/:id",authenticate,async function(req,res){
         console.log(err)
     }
 })
-//Edit a particular Group
+//Edit a particular Student 
 app.put("/group/:id",authenticate,async function(req,res){
     try{
         console.log(req.body);
@@ -208,7 +201,6 @@ app.delete("/group/:id",async function(req,res){
         console.log(err)
     }
 })
-//Delete Member of a group
 app.delete("/group/member/:id",async function(req,res){
     try{
        // var id=mongodb.ObjectId(req.params.id)
@@ -243,7 +235,29 @@ app.delete("/group/member/:id",async function(req,res){
         console.log(err)
     }
 })
-
+app.post("/settlepayment/:id",async function(req,res){
+    try{
+        console.log(req.body);
+        let groupid=req.params.id.slice(0,24);
+        let connection = await mongoclient.connect(URL)
+        let db=connection.db("Splitverse")
+        req.body.member=[];
+        req.body.userid=req.userid;
+        let group=await db.collection("groups").findOne({_id:mongodb.ObjectId(groupid)})
+        let updatedMember=group.member;
+        group.member.forEach((member,i)=>{
+            updatedMember[i].paid=0;
+        })
+        console.log(updatedMember);
+        await db.collection('groups').findOneAndUpdate({_id:mongodb.ObjectId(groupid)},{$set:{member:updatedMember}})
+        res.json({
+            message:"Payment Settled"
+        }) 
+    }
+    catch(error){
+        console.log(error)
+    }
+})
 app.listen(process.env.PORT||3000,function(){
     console.log("Server is up at 3000")
 })
